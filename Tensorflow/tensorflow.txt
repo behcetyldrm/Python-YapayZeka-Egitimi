@@ -1,0 +1,46 @@
+Perception -> Nöron
+
+yapay nöronlarımızı oluştururken belirli girdiler ve girdilerin ağırlıklarını veririz. Bu girdiler bir sayı, görüntü vb. olabilir. Ağırlık ise hangi girdinin öğrenmeye daha fazla etki
+edeceği yani baskın olacağını belirtir. Örneğin araba fiyatı tahmin programı yapıyoruz. Girdi olarak olarak kaza durumu, üretim yılı, boya durumu ve kilometresini alalım. Bu girdilerden
+araba fiyatına en çok etki eden kaza durumu, en az etki eden üretim yılıdır. Bu yüzden ağırlık olarak en çok kaza durumuna veriyoruz, en az da üretim yılına veriyoruz.
+
+girdi1 -> kaza durumu -> ağırlık: 0.7
+girdi2 -> üretim yılı -> ağırlık: 0.2
+
+Aktivasyon Fonksiyonları:
+
+1. Sigmoid Fonksiyonu:
+
+- 0 ve 1 arasında değer alır
+- Sınıflandırma problemlerinde kullanılır
+
+2. Tahn Fonksiyonu:
+
+- -1 ve 1 arasında değer alır
+- Daha geniş bir kapsam sağlar ve sınıflandırma problemlerinde kullanılır
+
+3. ReLU Fonksiyonu:
+
+- 0 ile sonsuz arasında değer alır
+- Derin Öğrenmede sıklıkla kullanılır
+
+4. Linear Fonksiyonlar:
+
+- Negatif ve pozitif sonsuz değer alır
+- Sonsuz değer aldığından performans sorunları çıkartır
+
+Regresyon:
+
+Y = a*x + b -> Regresyon Fonksiyonu. Y -> istenen sonuç(çocuğun boyu), a -> ağırlık(0.7), x -> özellik(baba boyu), b -> bias(sonucun doğruluğu arttıran değer)
+Veriler arasındaki ilişkiyi yani oranı bulmayı çalışmaktır. Örneğin baba ve çocuğunun boyu arasındaki ilişkiyi hesaplayalım. Öncelikle baba boyu ve çocuk boyu verileri
+alınır ve bunlar regresyon grafiğine yerleştirilir buna göre de doğmayan bir çocuğun baba boyuna bakılarak ortalama boyu hesaplanır
+
+Tensorflow'da yapay zekamızı eğitme:
+
+Veriyi test verisi ve öğrenme verisi olarak ikiye bölüyoruz. yapay zekamıza öğrenme verisini ve verilerin cevaplarını veriyoruz. İşlem sonrası yapay zekamız veri geldiğinde ne
+yapacağını öğreniyor. Sonra test verilerini veriyoruz ama cevapları vermiyoruz ve yapay zekamız kendi cevaplarını üretiyor ve bu cevapları gerçek cevaplarla 
+karşılaştırıyoruz
+
+Maliyet Fonksiyonu:
+
+- Gerçek cevaplardan ne kadar uzak olduğumuzu hesaplar. Düştükçe cevaplarımızın doğruluğu artar
